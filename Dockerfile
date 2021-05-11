@@ -1,7 +1,7 @@
 # Use NodeJS base image
 FROM node:13
 
-# declarebenvironment variables
+# declare environment variables
 ARG SAY_HELLO_TO=not_defined
 ENV SAY_HELLO_TO=${SAY_HELLO_TO}
 
