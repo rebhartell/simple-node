@@ -18,12 +18,12 @@ script:
   - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
   - docker build -t simple-node --build-arg SAY_HELLO_TO=${SAY_HELLO_TO} .
   - docker tag simple-node ${DOCKER_HUB}/simple-node:latest
-  - echo $HOME
-  - cd $HOME/test
+  - cd test
   - bash say-hello.sh
+  - cd ../
 
 after_success:
   - docker push ${DOCKER_HUB}/simple-node
-  - cd $HOME/test
+  - cd test
   - bash say-hello.sh
-  - set
+  - cd ../
