@@ -20,10 +20,10 @@ script:
   - docker tag simple-node ${DOCKER_HUB}/simple-node:latest
   - cd test
   - bash say-hello.sh
-  - cd ../
+  - cd ..
 
 after_success:
   - docker push ${DOCKER_HUB}/simple-node
   - cd test
   - bash say-hello.sh
-  - cd ../
+  - cd ..
